@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Link from "next/link";
 import {
   Accordion,
   AccordionItem,
@@ -26,52 +27,69 @@ import {
   ListIcon,
   OrderedList,
   UnorderedList,
+  Box,
+  RangeSliderThumb,
 } from "@chakra-ui/react";
 
 export default function Home() {
-  if (process.browser) {
-    const menu = document.getElementById("menu");
-
-    Array.from(document.getElementsByClassName("menu-item")).forEach(
-      (item, index) => {
-        item.onmouseover = () => {
-          menu.dataset.activeIndex = index;
-        };
-      }
-    );
-  }
-
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
-    <div id="menu">
-      <div id="menu-items">
-        <div class="menu-item">Hem</div>
-        <a href="https://github.com/tjugosex/" class="menu-item">
-          Github
-        </a>
-        <div class="menu-item">Linkedin</div>
-        <div class="menu-item" onClick={onOpen}>
-          Kontakt
-        </div>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Kontaktuppgifter</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <UnorderedList spacing={3}>
-              <ListItem><Tag colorScheme="purple">Mail: hejhej@yeet.com</Tag></ListItem>
-              <ListItem><Tag colorScheme="purple">Telefon: 99999999</Tag></ListItem>
-              </UnorderedList>
-            </ModalBody>
+    <Box bg="rgb(248, 248, 248)" height="100%" width="100%" alignContent="center">
+      <Box height="700px" width="500px"bg="rgb(248, 248, 248)" alignSelf="center" margin="50" border="3px" borderRadius="2px" borderColor="cyan" position="absolute"   >
+      <Accordion >
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                2dblobs
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <Button>
+              <a href="/projekts/simple2dblobs">
+                Enkel kontaktsida med 2d-animering i bakgrunden.
+              </a>
+            </Button>
+          </AccordionPanel>
+        </AccordionItem>
 
-            <ModalFooter></ModalFooter>
-          </ModalContent>
-        </Modal>
-      </div>
-      <div id="menu-background-pattern"></div>
-      <div id="menu-background-image"></div>
-    </div>
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                3dproj
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+          <Button>
+              <a href="/projekts/3dproj">
+                Lite 3d.
+              </a>
+            </Button>
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                fil  ip
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+          <Button>
+              <Link href="https://www.youtube.com/watch?v=cWHRB98McEc">
+              😎
+              </Link>
+            </Button>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+      </Box>
+    </Box>
   );
 }

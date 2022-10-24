@@ -7,7 +7,8 @@ body {
   align-items: center;
   display: flex;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  overflow: hidden;
 }
 
 #menu-items {
@@ -52,7 +53,7 @@ body {
   background-image: url("/blobes.svg");
   background-position: 0% 0%;
   background-size: 60vmin 60vmin;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   left: 0px;
   position: absolute;
@@ -60,14 +61,14 @@ body {
   transition: opacity 800ms ease, 
     background-size 800ms ease,
     background-position 800ms ease;
-  width: 100vw;
+  width: 100%;
   z-index: 1;
 }
 
 #menu-background-image {
   background-image: url("/blobs.svg");
   background-position: center 40%;
-  background-size: 110vmax;
+  background-size: 110%;
   height: 100%;
   left: 0px;  
   opacity: 0.15;
@@ -87,7 +88,7 @@ body {
 }
 
 #menu-items:hover ~ #menu-background-image {
-  background-size: 100vmax;
+  background-size: 100%;
   opacity: 0.1;
 }
 
@@ -106,10 +107,12 @@ body {
   cursor: pointer;
   display: block;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: 16px;
+    font-size: 4vw;
   padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
   text-decoration: none;
   transition: opacity 400ms ease;
+  overflow: hidden;
 }
 
 body.menu-toggled > .meta-link > span {
@@ -145,6 +148,7 @@ body.menu-toggled > .meta-link > span {
   text-decoration: none;
   transition: background-color 400ms, border-color 400ms;
   z-index: 10000;
+  overflow: hidden;
 }
 
 .meta-link:hover {
@@ -160,4 +164,15 @@ body.menu-toggled > .meta-link > span {
 .meta-link > span {
   color: white;
   font-family: "Rubik", sans-serif;
+}
+
+#canvasbg
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.canvas{
+  background: #000;
 }
