@@ -146,7 +146,7 @@ export default function threedproj() {
       ></motion.div>
       <motion.div overflow="hidden">
         <Canvas
-          onClick={() => setFullscreen(!isFullscreen)}
+          onClick={() => setFullscreen(false)}
           style={{
             position: "absolute",
             top: "0",
@@ -169,12 +169,12 @@ export default function threedproj() {
           }
           id="canvasbg"
         >
-          <Controls enablePan={true} />
+         
           <ambientLight color={"white"} intensity={0.2} />
           <LightBulb position={[0, 3, 0]} />
-          <Box rotateX={3} rotateY={0.2} />
+          <Box position={[0, 3, 0]} rotateX={3} rotateY={0.2} />
 
-          <Floor position={[0, -1, 0]} />
+          <Floor position={[0, 0, 0]} />
         </Canvas>
       </motion.div>
     </div>
