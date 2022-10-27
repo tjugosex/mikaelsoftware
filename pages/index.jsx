@@ -71,23 +71,7 @@ export default function Home() {
             </Button>
           </AccordionPanel>
         </AccordionItem>
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex="1" textAlign="left">
-                fil  ip
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-          <Button>
-              <Link href="https://www.youtube.com/watch?v=cWHRB98McEc">
-              😎
-              </Link>
-            </Button>
-          </AccordionPanel>
-        </AccordionItem>
+        
       </Accordion>
       </Box>
     </Box>

@@ -10,7 +10,8 @@ function Box(props) {
 
   return (
     <mesh {...props} ref={boxRef} recieveShadow={true} castShadow={true} >
-      <torusBufferGeometry args={[ 1, 0.1, 20, 100 ]} />
+      <pointLight castShadow />
+      <torusBufferGeometry args={[ 1, 0.2, 20, 100 ]} />
       <meshPhysicalMaterial  color={"gold"} />
     </mesh>
   );

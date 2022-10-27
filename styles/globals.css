@@ -100,6 +100,10 @@ body {
   opacity: 1; 
 }
 
+.floor{
+  cursor: pointer;
+}
+
 .menu-item {
   color: white;
   border: 5px;
@@ -171,8 +175,9 @@ body.menu-toggled > .meta-link > span {
   position: fixed;
   top: 0;
   left: 0;
+  cursor: pointer
 }
 
 .canvas{
-  background: #000;
+  background: rgb(255, 198, 198);
 }
